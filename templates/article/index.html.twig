@@ -4,9 +4,15 @@
 
 {% block body %}
     {% for article in articles %}
-    <div>
+    <div class="article">
         <a href="{{ path('article', {id: article.id }) }}"><h4>{{ article }}</h4></a>
-        <p>{{ article.content }}</p>
+        <div style="display:flex;">
+            <img src="images/{{ article.photoFilename }}" style="width:200px;">
+            <div>
+                <p>{{ article.content|slice(0, 100) }}...</p>
+                <p>{{ article.createdAt|format_datetime('medium', 'short') }}</p>
+            </div>
+        </div>
     </div>
     {% endfor %}
 {% endblock %}

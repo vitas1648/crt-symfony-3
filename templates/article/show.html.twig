@@ -5,6 +5,12 @@
 {% block body %}
     <div class="article">
         <h4>{{ article }}</h4>
-        <p>{{ article.content }}</p>
+        <div style="display:flex;">
+            <img src="../images/{{ article.photoFilename }}" style="width:200px;">
+            <div>
+                <p>{{ article.content }}</p>
+                <p>{{ article.createdAt|format_datetime('medium', 'short') }}</p>
+            </div>
+        </div>
     </div>
 {% endblock %}
