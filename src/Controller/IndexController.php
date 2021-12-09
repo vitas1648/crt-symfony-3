@@ -16,7 +16,8 @@ class IndexController extends AbstractController
     public function index(Environment $twig, ArticleRepository $articleRepository): Response
     {
         return new Response($twig->render('article/index.html.twig', [
-            'articles' => $articleRepository->findAll(),
+//            'articles' => $articleRepository->findAll(),
+            'articles' => $articleRepository->findBy(array(), ['createdAt' => 'DESC']),
         ]));
 //        return $this->render('index/index.html.twig', [
 //            'controller_name' => 'IndexController',
