@@ -4,6 +4,9 @@
 
 {% block body %}
     {% for article in articles %}
+    <div>
         <a href="{{ path('article', {id: article.id }) }}"><h4>{{ article }}</h4></a>
+        <p>{{ article.content }}</p>
+    </div>
     {% endfor %}
 {% endblock %}

@@ -30,4 +30,10 @@ class IndexController extends AbstractController
             'article' => $article,
         ]));
     } 
+    
+    #[Route('/about', name: 'about')]
+    public function about(Environment $twig): Response
+    {
+        return new Response($twig->render('index/about.html.twig'));
+    }
 }
