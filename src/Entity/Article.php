@@ -36,6 +36,11 @@ class Article
      * @ORM\Column(type="datetime_immutable")
      */
     private $createdAt;
+    
+    public function __toString(): string 
+    {
+        return $this->title;
+    }
 
     public function getId(): ?int
     {
