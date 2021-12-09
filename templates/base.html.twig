@@ -13,9 +13,10 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
-        <header>
+    <body style="width: 1200px; margin: auto;">
+        <header style="display: flex; justify-content: space-around;">
             <h1><a href="{{ path ('homepage') }}">Home page</a></h1>
+            <h1><a href="{{ path ('admin') }}">Admin</a></h1>
         </header>
         {% block body %}{% endblock %}
     </body>
